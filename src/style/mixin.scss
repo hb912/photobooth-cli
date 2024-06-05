@@ -1,0 +1,112 @@
+// K-Deal version 1.0
+
+// Copyright© 2023 kt corp. All rights reserved.
+
+// This is a proprietary software of kt corp, and you may not use this file except in
+// compliance with license agreement with kt corp. Any redistribution or use of this
+// software, with or without modification shall be strictly prohibited without prior written
+// approval of kt corp, and the copyright notice above does not evidence any actual or
+// intended publication of such software.
+// <--------------------- Font --------------------->
+@function rem($size) {
+  $remSize: $size / 36;
+  @return $remSize * 1rem;
+}
+// <--------------------- Font --------------------->
+@mixin font-style($size, $color, $font-family) {
+    font-size: $size; //  fallback
+    font-size: rem($size);
+    color: $color;
+    font-family:  $font-family;
+  }
+
+// <--------------------- side padding --------------------->
+@mixin sidePadding($size) {
+  padding-left: rem($size);
+  padding-right: rem($size);
+  -webkit-box-sizing: border-box !important;
+  -moz-box-sizing: border-box !important;
+  -ms-box-sizing: border-box !important;
+  box-sizing: border-box !important;
+}
+// <--------------------- Animation --------------------->
+@mixin keyframes($animation-name) {
+    @-webkit-keyframes #{$animation-name} {
+        @content;
+    }
+    @-moz-keyframes #{$animation-name} {
+        @content;
+    }
+    @-ms-keyframes #{$animation-name} {
+        @content;
+    }
+    @-o-keyframes #{$animation-name} {
+        @content;
+    }
+    @keyframes #{$animation-name} {
+        @content;
+    }
+}
+@mixin animation($str) {
+  -webkit-animation: #{$str};
+  -moz-animation: #{$str};
+  -ms-animation: #{$str};
+  -o-animation: #{$str};
+  animation: #{$str};
+}
+
+//<--------------------- Background --------------------->
+@mixin background($url, $size, $position, $color:transparent) {
+    background-image: url($url);
+    background-repeat: no-repeat;
+    background-position: $position;
+    background-size: $size;
+    background-color: $color;
+}
+
+@mixin noUrlBackgroundSetting($size, $position, $color:transparent) {
+  background-repeat: no-repeat;
+  background-position: $position;
+  background-size: $size;
+  background-color: $color;
+}
+
+// <--------------------- Padding & Margin --------------------->
+@mixin padding($top, $right, $bottom, $left) {
+    padding-top: rem($top);
+    padding-right: rem($right);
+    padding-bottom: rem($bottom);
+    padding-left: rem($left);
+  }
+
+@mixin margin($top, $right, $bottom, $left) {
+    margin-top: rem($top);
+    margin-right: rem($right);
+    margin-bottom: rem($bottom);
+    margin-left: rem($left);
+  }
+
+// <--------------------- Verdor prefix --------------------->
+  @mixin css3-prefix($prop, $value) {
+    -webkit-#{$prop}: #{$value};
+    -moz-#{$prop}: #{$value};
+    -ms-#{$prop}: #{$value};
+    -o-#{$prop}: #{$value};
+    #{$prop}: #{$value};
+  }
+
+// <--------------------- ellipsis --------------------->
+@mixin ellipsis($width) {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: rem($width);
+}
+
+@mixin limitTwoLine {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
