@@ -1,26 +1,38 @@
+<!--
+  K-Deal version 1.0
+
+  Copyright© 2023 kt corp. All rights reserved.
+
+  This is a proprietary software of kt corp, and you may not use this file except in
+  compliance with license agreement with kt corp. Any redistribution or use of this
+  software, with or without modification shall be strictly prohibited without prior written
+  approval of kt corp, and the copyright notice above does not evidence any actual or
+  intended publication of such software.
+-->
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="app">
+    <div class="content-container">
+      <MainHeader/>
+    </div>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+// Button Components
+import MainHeader from '@/components/Header.vue'
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld
-  }
+  components: { MainHeader }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+
+div.content-container {
+  min-height: 100vh;
+  max-width: 640px;
+  margin: 0 auto;
 }
+
 </style>
