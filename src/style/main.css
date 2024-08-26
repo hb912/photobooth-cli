@@ -1,0 +1,29 @@
+@import 'reset.css';
+@import '../scss/common.scss';
+@import '../scss/font-family.scss';
+
+:root {
+    --vh: 100%;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+#app {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+    margin-top: 60px;
+    padding: 0 !important;
+    width: 100%;
+    height: 100vh;
+    grid-template-columns: 1fr 1fr;
+    font-size: 1rem;
+}
+
+div.el-message {
+    z-index: 9999 !important;
+}
